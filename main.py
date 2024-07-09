@@ -1,12 +1,17 @@
 # Example file showing a circle moving on screen
 import pygame
-import random 
 blue_tile=pygame.image.load("tiles/1.png")
+blue_tile = pygame.transform.scale(blue_tile, (50, 50))
 brown_tile=pygame.image.load("tiles/2.png")
+brown_tile = pygame.transform.scale(brown_tile, (50, 50))
 water_tile=pygame.image.load("tiles/3.png")
+water_tile = pygame.transform.scale(water_tile, (50, 50))
 green_tile=pygame.image.load("tiles/4.png")
+green_tile = pygame.transform.scale(green_tile, (50, 50))
 purple_tile=pygame.image.load("tiles/5.png")
+purple_tile = pygame.transform.scale(purple_tile, (50, 50))
 yellow_tile=pygame.image.load("tiles/6.png")
+yellow_tile = pygame.transform.scale(yellow_tile, (50, 50))
 # pygame setup
 pygame.init()
 screen = pygame.display.set_mode((1000, 900))
@@ -76,16 +81,20 @@ class Block:
         self.width = 50
 
     def display(self,screen):
-        print()
+        screen.blit(brown_tile,[self.x , self.y , self.width , self.height])
+        
 class BrownBlock(Block):
     def display(self, screen):
         screen.blit(brown_tile,[self.x , self.y , self.width , self.height])
+
 class WaterBlock(Block):
     def display(self, screen):
         screen.blit(water_tile,[self.x , self.y , self.width , self.height])
+
 class GrassBlock(Block):
     def display(self, screen):
         screen.blit(green_tile,[self.x , self.y , self.width , self.height])
+
 class Map:
     def __init__(self) : 
         self.level = 1 
